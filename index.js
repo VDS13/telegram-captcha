@@ -1,0 +1,1 @@
+export { GroupCaptcha, GroupCaptchaRTJ } from './src/captcha.js';

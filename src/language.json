@@ -1,11 +1,11 @@
 {
     "captcha_channel": {
-        "ru": "Приветсвую вас в нашей группе. Пройдите капчу в течение 5 минут или вы будете забанены на сутки.",
-        "en": "Welcome to our group. Pass the captcha within 5 minutes or you will be banned for a day.",
-        "de": "Willkommen in unserer Gruppe. Übergeben Sie das Captcha innerhalb von 5 Minuten oder Sie werden für einen Tag gesperrt.",
-        "es": "Bienvenido a nuestro grupo. Pasa el captcha en 5 minutos o serás baneado por un día.",
-        "fr": "Bienvenue dans notre groupe. Passez le captcha dans les 5 minutes ou vous serez banni pendant une journée.",
-        "it": "Benvenuti nel nostro gruppo. Passa il captcha entro 5 minuti o verrai bannato per un giorno."
+        "ru": "Приветсвую вас в нашей группе. Пройдите капчу в течение %time_for_enter% или вы будете забанены на сутки.",
+        "en": "Welcome to our group. Pass the captcha within %time_for_enter% or you will be banned for a day.",
+        "de": "Willkommen in unserer Gruppe. Übergeben Sie das Captcha innerhalb von %time_for_enter% oder Sie werden für einen Tag gesperrt.",
+        "es": "Bienvenido a nuestro grupo. Pasa el captcha en %time_for_enter% o serás baneado por un día.",
+        "fr": "Bienvenue dans notre groupe. Passez le captcha dans les %time_for_enter% ou vous serez banni pendant une journée.",
+        "it": "Benvenuti nel nostro gruppo. Passa il captcha entro %time_for_enter% o verrai bannato per un giorno."
     },
     "result": {
         "ru": "Результат: ",

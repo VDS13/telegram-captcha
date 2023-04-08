@@ -1,21 +1,16 @@
 import { writeFileSync, unlinkSync } from 'fs';
 import path from 'path';
-import { readFile } from 'fs/promises';
 import { fileURLToPath } from 'url';
 import color from 'randomcolor';
 import { Canvg } from 'canvg';
 import svg from 'svg-captcha';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const lang = JSON.parse(
-    await readFile(
-        new URL('./language.json', import.meta.url)
-    )
-);
+
 
 export function createMenu(id) {
     var menu = {};
-    menu.caption = lang.captcha_channel[this.language];
+    menu.caption = this.lang.captcha_channel[this.language];
     menu.parse_mode = "HTML";
     menu.reply_markup = this.createInlineKeyboard(id);
     return menu;
@@ -69,9 +64,9 @@ export function clickDelete(query) {
         this.check[query.from.id].captcha_input = this.check[query.from.id].captcha_input.slice(0, -1);
         this.check[query.from.id].captcha_count--;
         if (this.check[query.from.id].captcha_count === 0) {
-            this.bot.editMessageCaption(lang.captcha_channel[this.language], {message_id: query.message.message_id, chat_id: query.message.chat.id, reply_markup: this.check[query.from.id].keyboard});
+            this.bot.editMessageCaption(this.lang.captcha_channel[this.language], {message_id: query.message.message_id, chat_id: query.message.chat.id, reply_markup: this.check[query.from.id].keyboard});
         } else {
-            this.bot.editMessageCaption(lang.captcha_channel[this.language] + '\n<b>' + lang.result[this.language] + this.check[query.from.id].captcha_input + '</b>', {message_id: query.message.message_id, chat_id: query.message.chat.id, reply_markup: this.check[query.from.id].keyboard, parse_mode: "HTML"});
+            this.bot.editMessageCaption(this.lang.captcha_channel[this.language] + '\n<b>' + this.lang.result[this.language] + this.check[query.from.id].captcha_input + '</b>', {message_id: query.message.message_id, chat_id: query.message.chat.id, reply_markup: this.check[query.from.id].keyboard, parse_mode: "HTML"});
         }
     }
 }
@@ -93,7 +88,7 @@ export async function clickUpdate(query) {
         {
             type: 'photo',
             media: `attach://${path.join(__dirname, query.from.id.toString() + ".png")}`,
-            caption: lang.captcha_channel[this.language]
+            caption: this.lang.captcha_channel[this.language]
         },
         {
             message_id: query.message.message_id,

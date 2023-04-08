@@ -22,6 +22,7 @@ Captcha for open groups.
 | [options] | <code>Object</code> |  |  |
 | [options.language] | <code>String</code> | <code>"en"</code> | Language. |
 | [options.size] | <code>Number</code> | <code>4</code> | Captcha length < 9 (number of characters). |
+| [options.time_for_enter] | <code>Number</code> | <code>5</code> | Time for enter captcha (in minutes). |
 
 <a name="GroupCaptcha+generateCaptcha"></a>
 
@@ -64,6 +65,7 @@ Captcha for groups with requests to join.
 | [options] | <code>Object</code> |  |  |
 | [options.language] | <code>String</code> | <code>"en"</code> | Language. |
 | [options.size] | <code>Number</code> | <code>4</code> | Captcha length < 9 (number of characters). |
+| [options.time_for_enter] | <code>Number</code> | <code>5</code> | Time for enter captcha (in minutes). |
 
 <a name="GroupCaptchaRTJ+generateCaptcha"></a>
 

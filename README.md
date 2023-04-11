@@ -47,38 +47,32 @@ npm i telegram-captcha
 ```js
 const TOKEN = process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 
-import TelegramBot from 'node-telegram-bot-api';
 import { GroupCaptcha } from 'telegram-captcha';
-process.env["NTBA_FIX_350"] = 1;
-process.env["NTBA_FIX_319"] = 1
-const bot = new TelegramBot(TOKEN, {polling: true});
-const captcha = new GroupCaptcha(bot, {
+
+const captcha = new GroupCaptcha(TOKEN, {polling: true}, {
     size: 6,
     language: 'de',
     time_for_enter: 3
 });
 
-bot.on("new_chat_members", (msg) => captcha.generateCaptcha(msg));
-bot.on("callback_query", (query) => captcha.clickKeyboard(query));
+captcha.bot.on("new_chat_members", (msg) => captcha.generateCaptcha(msg));
+captcha.bot.on("callback_query", (query) => captcha.clickKeyboard(query));
 ```
 
 #### Group with requests to join
 ```js
 const TOKEN = process.env.TELEGRAM_TOKEN || 'YOUR_TELEGRAM_BOT_TOKEN';
 
-import TelegramBot from 'node-telegram-bot-api';
 import { GroupCaptchaRTJ } from 'telegram-captcha';
-process.env["NTBA_FIX_350"] = 1;
-process.env["NTBA_FIX_319"] = 1
-const bot = new TelegramBot(TOKEN, {polling: true});
-const captcha = new GroupCaptchaRTJ(bot, {
+
+const captcha = new GroupCaptchaRTJ(TOKEN, {polling: true}, {
     size: 5,
     language: 'es',
     time_for_enter: 7
 });
 
-bot.on("chat_join_request", (cjr) => captcha.generateCaptcha(cjr));
-bot.on("callback_query", (query) => captcha.clickKeyboard(query));
+captcha.bot.on("chat_join_request", (cjr) => captcha.generateCaptcha(cjr));
+captcha.bot.on("callback_query", (query) => captcha.clickKeyboard(query));
 ```
 
 ## ⚙️ Default options 
@@ -98,7 +92,6 @@ bot.on("callback_query", (query) => captcha.clickKeyboard(query));
 - [x] Option `"size"`
 - [ ] Option `"ban time"`
 - [x] Option `"time for enter captcha"`
-- [ ] Support `Telegraf/grammY/telebot`
 - [ ] reCaptcha
 - [ ] Other types of captcha
 

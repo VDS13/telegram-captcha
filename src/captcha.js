@@ -9,12 +9,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import humanizeDuration from 'humanize-duration';
 import { createMenu, banChannel, createInlineKeyboard, clickKeyboard, clickDelete, clickUpdate } from './func.js';
+import TelegramBot from 'node-telegram-bot-api';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export class GroupCaptcha {
-    constructor(bot, options = {}) {
-        this.bot = bot;
+    constructor(token, telegram_options = {}, options = {}) {
+        this.bot = new TelegramBot(token, telegram_options);
         this.check = {};
         this.options = options;
         this.options.size = (typeof options.size === 'undefined' || options.size > 8) ? 4 : options.size;
@@ -33,6 +34,8 @@ export class GroupCaptcha {
         });
         this.language = (typeof options.language === 'undefined') ? 'en' : options.language;
         this.libraryInitialization();
+        process.env["NTBA_FIX_350"] = 1;
+        process.env["NTBA_FIX_319"] = 1;
     }
     async libraryInitialization() {
         this.createMenu = createMenu;
@@ -92,8 +95,8 @@ export class GroupCaptcha {
 }
 
 export class GroupCaptchaRTJ {
-    constructor(bot, options = {}) {
-        this.bot = bot;
+    constructor(token, telegram_options = {}, options = {}) {
+        this.bot = new TelegramBot(token, telegram_options);
         this.check = {};
         this.options = options;
         this.options.size = (typeof options.size === 'undefined' || options.size > 8) ? 4 : options.size;
@@ -112,6 +115,8 @@ export class GroupCaptchaRTJ {
         });
         this.language = (typeof options.language === 'undefined') ? 'en' : options.language;
         this.libraryInitialization();
+        process.env["NTBA_FIX_350"] = 1;
+        process.env["NTBA_FIX_319"] = 1;
     }
     async libraryInitialization() {
         this.createMenu = createMenu;

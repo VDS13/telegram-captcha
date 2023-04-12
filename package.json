@@ -1,6 +1,6 @@
 {
   "name": "telegram-captcha",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Protect telegram groups from automated bots.",
   "main": "./index.js",
   "type": "module",
@@ -26,7 +26,7 @@
     "randomcolor": "^0.6.2",
     "svg-captcha": "^1.4.0",
     "humanize-duration": "^3.28.0",
-    "xmldom": "^0.6.0"
+    "@xmldom/xmldom": "^0.8.7"
   },
   "repository": {
     "type": "git",

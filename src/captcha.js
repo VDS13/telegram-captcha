@@ -1,6 +1,6 @@
 import svg from 'svg-captcha';
 import canvas from "canvas";
-import { DOMParser } from 'xmldom';
+import { DOMParser } from '@xmldom/xmldom';
 import fetch from 'node-fetch'
 import { Canvg, presets } from 'canvg';
 import color from 'randomcolor';
@@ -87,6 +87,7 @@ export class GroupCaptcha {
                 if (this.check[query.from.id].captcha_count == this.options.size) {
                     if (this.check[query.from.id].captcha_text == this.check[query.from.id].captcha_input) {
                         this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
+                        clearTimeout(this.check[query.from.id].captcha);
                         delete this.check[query.from.id];
                     }
                 }
@@ -167,9 +168,11 @@ export class GroupCaptchaRTJ {
             }).then(() => {
                 if (this.check[query.from.id].captcha_count == this.options.size) {
                     if (this.check[query.from.id].captcha_text == this.check[query.from.id].captcha_input) {
-                        this.bot.approveChatJoinRequest(this.check[query.from.id].chat_id, query.from.id);
                         this.bot.deleteMessage(query.message.chat.id, query.message.message_id);
-                        delete this.check[query.from.id];
+                        this.bot.approveChatJoinRequest(this.check[query.from.id].chat_id, query.from.id).then(()=> {
+                            clearTimeout(this.check[query.from.id].captcha);
+                            delete this.check[query.from.id];
+                        });
                     }
                 }
             });

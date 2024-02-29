@@ -99,4 +99,4 @@ captcha.bot.on("callback_query", (query) => captcha.clickKeyboard(query));
 
 **The MIT License (MIT)**
 
-Copyright © 2023 Dmitry Vyazin
+Copyright © 2023-2024 Dmitry Vyazin

@@ -5,7 +5,8 @@
         "de": "Willkommen in unserer Gruppe. Übergeben Sie das Captcha innerhalb von %time_for_enter% oder Sie werden für einen Tag gesperrt.",
         "es": "Bienvenido a nuestro grupo. Pasa el captcha en %time_for_enter% o serás baneado por un día.",
         "fr": "Bienvenue dans notre groupe. Passez le captcha dans les %time_for_enter% ou vous serez banni pendant une journée.",
-        "it": "Benvenuti nel nostro gruppo. Passa il captcha entro %time_for_enter% o verrai bannato per un giorno."
+        "it": "Benvenuti nel nostro gruppo. Passa il captcha entro %time_for_enter% o verrai bannato per un giorno.",
+        "vi": "Chào mừng đến với nhóm của chúng tôi. Hoàn thành mã captcha trong vòng %time_for_enter% nếu không bạn sẽ bị cấm trong một ngày."
     },
     "result": {
         "ru": "Результат: ",
@@ -13,6 +14,7 @@
         "de": "Ergebnis: ",
         "es": "Resultado: ",
         "fr": "Résultat: ",
-        "it": "Risultato: "
+        "it": "Risultato: ",
+        "vi": "Kết quả: "
     }
 }

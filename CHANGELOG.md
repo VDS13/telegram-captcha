@@ -4,6 +4,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.0](https://github.com/VDS13/telegram-captcha/compare/1.1.0...1.2.0) - 2023-07-11
+
+### Added:
+
+* Vietnamese language support.
+
 ## [1.1.0](https://github.com/VDS13/telegram-captcha/compare/1.0.0...1.1.0) - 2023-04-12
 
 ### Fixed:

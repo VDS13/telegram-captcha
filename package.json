@@ -1,6 +1,6 @@
 {
   "name": "telegram-captcha",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Protect telegram groups from automated bots.",
   "main": "./index.js",
   "type": "module",

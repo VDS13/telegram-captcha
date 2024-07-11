@@ -26,6 +26,7 @@ Supported languages:
 * Spanish
 * Italian
 * German
+* Vietnamese
 
 Supported Telegram bot libraries:
 * [node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)
